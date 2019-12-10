@@ -14,6 +14,7 @@ def index():
     getData = '''SELECT id_prim from transaksi_penjualan group by id_prim order by id_prim asc'''
     getSQL = '''SELECT p.nama_produk,p.stok,tp.* from transaksi_penjualan tp left join produk p on tp.id_prim=p.id_prim where tp.id_prim=%s'''
     t = []
+    conn.commit()
     cur = conn.cursor()
     cur.execute(getData)
     rv = cur.fetchall()
@@ -44,6 +45,7 @@ def graph():
     id_produk = request.get_json('id')
     a = id_produk.get('id')
     getSQL = '''SELECT p.nama_produk,p.stok,tp.* from transaksi_penjualan tp left join produk p on tp.id_prim=p.id_prim where tp.id_prim=%s'''
+    conn.commit()
     cur = conn.cursor()
     cur.execute(getSQL, (a))
     rs = cur.fetchall()
