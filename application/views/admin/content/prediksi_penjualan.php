@@ -62,7 +62,7 @@
               document.getElementById("hasil").innerHTML = data[0].bulan;
             },
             error: function() {
-              $('#userTable tbody').html('<td colspan="6" align="center">Error</td>');
+              $('#userTable tbody').html('<td colspan="7" align="center">Error</td>');
             },
           });
 

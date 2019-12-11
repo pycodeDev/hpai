@@ -61,10 +61,10 @@ class Dashboard extends CI_Controller {
 			redirect('login');
 		} else {
 			$sp = $this->produk_model;
-			$data['title'] = 'Kelola Stock Produk';
+			$data['title'] = 'Kelola Stock Produk';	
 			$data['title_kc'] = 'Kelola Stock Produk';
 			$data['kc'] = 'stok produk';
-			$data['variable'] = $sp->getAll();
+			$data['variable'] = $this->db->get_where("produk", ["status" => 'Aktif'])->result();;
 		
 			$data['content'] = $this->load->view('admin/content/stok_produk',$data,TRUE);
 			$this->load->view('admin/index',$data);

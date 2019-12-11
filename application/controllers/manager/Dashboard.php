@@ -50,6 +50,20 @@ class Dashboard extends CI_Controller
 			$data['content'] = $this->load->view('manager/content/lap_produk',$data,TRUE);
 			$this->load->view('manager/index',$data);
 		}
+    }
+    
+    public function grafik_prediksi($id)
+	{
+		if ($this->session->userdata('username') == false and $this->session->userdata('akses') != 'manager') {
+			redirect('login');
+		} else {
+			$data['title'] = 'Grafik Prediksi Penjualan';
+			$data['title_kc'] = 'Grafik Prediksi Penjualan';
+			$data['kc'] = 'grafik prediksi';
+			$data['id'] = $id;
+			$data['content'] = $this->load->view('manager/content/graph',$data,TRUE);
+			$this->load->view('manager/index',$data);
+		}
 	}
 
 	public function lap_produk(){
