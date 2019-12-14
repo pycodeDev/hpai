@@ -210,19 +210,19 @@ class Dashboard extends CI_Controller {
 		$pdf->Cell(0,9,'Laporan Data Produk ',0,1,'C');
 		$pdf->Cell(10,7,'',0,1);
         $pdf->SetFont('Arial','B',12);
-        $pdf->Cell(30,6,'No ',1,0,'C');
-        $pdf->Cell(40,6,'ID Produk',1,0,'C');
-        $pdf->Cell(85,6,'Nama Produk',1,0,'C');
-        $pdf->Cell(37,6,'Status',1,1,'C');
+        $pdf->Cell(15,6,'No ',1,0,'C');
+        $pdf->Cell(30,6,'ID Produk',1,0,'C');
+        $pdf->Cell(127,6,'Nama Produk',1,0,'C');
+        $pdf->Cell(23,6,'Status',1,1,'C');
 
         $pdf->SetFont('Arial','',13);
 		//prediksi 
 		$no =1;
         foreach($data as $item){
-            $pdf->Cell(30,6,$no++,1,0,'C');
-            $pdf->Cell(40,6,$item['id_produk'],1,0,'C');
-            $pdf->Cell(85,6,$item['nama_produk'],1,0,'C');
-            $pdf->Cell(37,6,$item['status'],1,1,'C');
+            $pdf->Cell(15,6,$no++,1,0,'C');
+            $pdf->Cell(30,6,$item['id_produk'],1,0,'C');
+            $pdf->Cell(127,6,$item['nama_produk'],1,0,'C');
+            $pdf->Cell(23,6,$item['status'],1,1,'C');
         }
 
         $pdf->Output();
@@ -285,22 +285,20 @@ class Dashboard extends CI_Controller {
 		$pdf->Cell(10,7,'',0,1);
         $pdf->SetFont('Arial','B',12);
         $pdf->Cell(20,6,'No ',1,0,'C');
-        $pdf->Cell(35,6,'ID Produk',1,0,'C');
-        $pdf->Cell(45,6,'Nama Produk',1,0,'C');
-        $pdf->Cell(20,6,'Tahun',1,0,'C');
-        $pdf->Cell(40,6,'Bulan',1,0,'C');
-        $pdf->Cell(25,6,'Quantity',1,1,'C');
+        $pdf->Cell(50,6,'ID Produk',1,0,'C');
+        $pdf->Cell(30,6,'Tahun',1,0,'C');
+        $pdf->Cell(50,6,'Bulan',1,0,'C');
+        $pdf->Cell(40,6,'Quantity',1,1,'C');
 
         $pdf->SetFont('Arial','',13);
 		//prediksi 
 		$no =1;
         for($i=0; $i < sizeof($produk); $i++){
             $pdf->Cell(20,6,$no++,1,0,'C');
-            $pdf->Cell(35,6,$pr->id_produk,1,0,'C');
-            $pdf->Cell(45,6,$pr->nama_produk,1,0,'C');
-            $pdf->Cell(20,6,$produk[$i]['tahun'],1,0,'C');
-            $pdf->Cell(40,6,$produk[$i]['bulan'],1,0,'C');
-            $pdf->Cell(25,6,$produk[$i]['QTY'],1,1,'C');
+            $pdf->Cell(50,6,$pr->id_produk,1,0,'C');
+            $pdf->Cell(30,6,$produk[$i]['tahun'],1,0,'C');
+            $pdf->Cell(50,6,$produk[$i]['bulan'],1,0,'C');
+            $pdf->Cell(40,6,$produk[$i]['QTY'],1,1,'C');
         }
 
         $pdf->Output();
@@ -362,22 +360,20 @@ class Dashboard extends CI_Controller {
 		$pdf->Cell(10,7,'',0,1);
         $pdf->SetFont('Arial','B',12);
         $pdf->Cell(20,6,'No ',1,0,'C');
-        $pdf->Cell(35,6,'ID Produk',1,0,'C');
-        $pdf->Cell(45,6,'Nama Produk',1,0,'C');
-        $pdf->Cell(20,6,'Tahun',1,0,'C');
-        $pdf->Cell(40,6,'Bulan',1,0,'C');
-        $pdf->Cell(25,6,'Quantity',1,1,'C');
+        $pdf->Cell(50,6,'ID Produk',1,0,'C');
+        $pdf->Cell(30,6,'Tahun',1,0,'C');
+        $pdf->Cell(50,6,'Bulan',1,0,'C');
+        $pdf->Cell(40,6,'Quantity',1,1,'C');
 
         $pdf->SetFont('Arial','',13);
 		//prediksi 
 		$no =1;
         for($i=0; $i < sizeof($produk); $i++){
             $pdf->Cell(20,6,$no++,1,0,'C');
-            $pdf->Cell(35,6,$pr->id_produk,1,0,'C');
-            $pdf->Cell(45,6,$pr->nama_produk,1,0,'C');
-            $pdf->Cell(20,6,$produk[$i]['tahun'],1,0,'C');
-            $pdf->Cell(40,6,$produk[$i]['bulan'],1,0,'C');
-            $pdf->Cell(25,6,$produk[$i]['QTY'],1,1,'C');
+            $pdf->Cell(50,6,$pr->id_produk,1,0,'C');
+            $pdf->Cell(30,6,$produk[$i]['tahun'],1,0,'C');
+            $pdf->Cell(50,6,$produk[$i]['bulan'],1,0,'C');
+            $pdf->Cell(40,6,$produk[$i]['QTY'],1,1,'C');
         }
 
         $pdf->Output();
